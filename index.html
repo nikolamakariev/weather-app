@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="content">
-        <div class="weekDay">
+        <div class="weekDay" onclick="onWeekDayClick()">
             <div class="day">Monday</div>
             <div class="temperature">23</div>
         </div>
@@ -20,6 +20,20 @@
         <div class="weekDay">Saturday</div>
         <div class="weekDay">Sunday</div>
     </div>
+
+    <dialog id="dialog">
+        <div class="toolbar">
+            <div class="text">Weather Details</div>
+            <div class="closeButton" onclick="closeDialog()">Close</div>
+        </div>
+        <div class="dialogContent">
+            <div class="day">Monday</div>
+            <div class="temperature">22</div>
+            <div class="windDirection">Wind direction: North-East</div>
+            <div class="windSpeed">Wind speed: 10</div>
+            <div class="type">Sunny</div>
+        </div>
+    </dialog>
 
     <script src="./app.js" type="text/javascript"></script>
 </body>
