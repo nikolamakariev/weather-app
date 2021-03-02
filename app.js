@@ -47,7 +47,6 @@ const weatherData = {
 };
 
 function onLoad(){
-    console.log('onLoad');
     createDaysOfTheWeek();
 }
 
@@ -65,7 +64,7 @@ function createDaysOfTheWeek(){
 function createDay(element){
     const weekDay = document.createElement('div');
     weekDay.classList.add('weekDay');
-    weekDay.onclick = onWeekDayClick.bind(element);
+    weekDay.onclick = onWeekDayClick.bind(this, element);
 
     const weekDayName = document.createElement('div');
     weekDayName.textContent = element.day;
@@ -73,7 +72,7 @@ function createDay(element){
     weekDay.appendChild(weekDayName);
 
     const weekDayTemperature = document.createElement('div');
-    weekDayTemperature.textContent = element.temp;
+    weekDayTemperature.textContent = `${element.temp}°${weatherData.tempUnit}`;
     weekDayTemperature.classList.add('temperature');
     weekDay.appendChild(weekDayTemperature);
 

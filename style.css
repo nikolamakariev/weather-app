@@ -73,3 +73,7 @@ dialog {
     align-items: center;
     justify-content: space-around;
 }
+
+.arrow {
+    height: 20px;
+}
