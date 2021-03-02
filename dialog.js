@@ -19,9 +19,9 @@ function onWeekDayClick(element){
     const type = dialog.getElementsByClassName('type')[0];
 
     day.textContent = element.day;
-    temperature.textContent = `${element.temp}°${weatherData.tempUnit}`;
+    temperature.textContent = `${convertToKelvin(element.temp)}°${weatherData.tempUnit}`;
     windDirection.style.transform = `rotate(${bearings[element.windDirection]}deg)`;
-    windSpeed.textContent = `Wind speed: ${element.windSpeed} ${weatherData.windSpeedUnit}`;
+    windSpeed.textContent = `Wind speed: ${convertToKmPerHour(element.windSpeed)} ${weatherData.windSpeedUnit}`;
     type.textContent = element.type;
 
     dialog.showModal();

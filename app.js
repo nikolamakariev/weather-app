@@ -46,6 +46,8 @@ const weatherData = {
     }]
 };
 
+const content = document.getElementById('content');
+
 function onLoad(){
     createDaysOfTheWeek();
 }
@@ -57,7 +59,6 @@ function createDaysOfTheWeek(){
         fragment.appendChild(day);
     });
 
-    const content = document.getElementById('content');
     content.appendChild(fragment);
 }
 
@@ -72,9 +73,40 @@ function createDay(element){
     weekDay.appendChild(weekDayName);
 
     const weekDayTemperature = document.createElement('div');
-    weekDayTemperature.textContent = `${element.temp}°${weatherData.tempUnit}`;
+    weekDayTemperature.textContent = `${convertToKelvin(element.temp)}°${weatherData.tempUnit}`;
     weekDayTemperature.classList.add('temperature');
     weekDay.appendChild(weekDayTemperature);
 
     return weekDay;
+}
+
+function convertToKelvin(temp){
+    if(weatherData.tempUnit === 'K') {
+        return temp + 273.15;
+    }
+
+    return temp;
+}
+
+function convertToKmPerHour(windSpeed){
+    if(weatherData.windSpeedUnit === 'km/h') {
+        return (windSpeed / 1000 * 3600).toFixed(2);;
+    }
+
+    return windSpeed;
+}
+
+function changeTemperatureUnits(unit){
+    weatherData.tempUnit = unit;
+    redraw();
+}
+
+function changeWindSpeedUnits(unit){
+    weatherData.windSpeedUnit = unit;
+    redraw();
+}
+
+function redraw(){
+    content.innerHTML = '';
+    createDaysOfTheWeek();
 }

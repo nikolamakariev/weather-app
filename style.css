@@ -35,7 +35,7 @@ body {
 }
 
 .temperature {
-    font-size: 50px;
+    font-size: 45px;
 }
 
 dialog {
@@ -76,4 +76,10 @@ dialog {
 
 .arrow {
     height: 20px;
+}
+
+.units {
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }

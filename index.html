@@ -11,6 +11,22 @@
     <div id="content">
     </div>
 
+    <div class="units">
+        <div class="temperatureUnits">
+            <input type="radio" id="celsius" name="temperature" value="C" checked  onchange="changeTemperatureUnits('C')">
+            <label for="celsius">Celsius (C)</label><br>
+            <input type="radio" id="kelvin" name="temperature" value="K" onchange="changeTemperatureUnits('K')">
+            <label for="kelvin">Kelvin (K)</label><br>
+        </div>
+
+        <div class="windSpeedUnits">
+            <input type="radio" id="meterPerSecond" name="windSpeed" value="m/s" checked  onchange="changeWindSpeedUnits('m/s')">
+            <label for="meterPerSecond">m/s</label><br>
+            <input type="radio" id="kmPerHour" name="windSpeed" value="km/h" onchange="changeWindSpeedUnits('km/h')">
+            <label for="kmPerHour">km/h</label><br>
+        </div>
+    </div>
+
     <dialog id="dialog">
         <div class="toolbar">
             <div class="text">Weather Details</div>
