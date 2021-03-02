@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-.content {
+#content {
     height: 100vh;
     display: flex;
     justify-content: space-around;
